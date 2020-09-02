@@ -3,8 +3,14 @@ Up to date guide of running genome aligner CACTUS -https://github.com/Comparativ
 (last edit - 01/09/2020)
 
 DNAZoo's goal is to create 1 alignment with all dnazoo genomes + all mammals on ncbi (excluding those from the 200 mammals project)
+
+- there are ~120 mammals assembled by DNAZoo, ~150 genomes overall
+- there are 458 mammals on the NCBI DB
+  (note that there will be overlap, in this instance we will use the DNAZoo genome)
+
 -> annotations to form tree can be found here: https://www.dnazoo.org/post/announcing-the-release-of-updated-genome-annotations
 https://github.com/macmanes-lab/dnazoo_annotation/blob/master/phylogeny_v2.newick
+
 
 Starting Point (for testing) - DNA Zoos 9 primates
 
