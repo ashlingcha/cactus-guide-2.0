@@ -2,6 +2,19 @@
 Up to date guide of running genome aligner CACTUS (last edit - 01/09/2020)
 
 DNAZoo's goal is to create 1 alignment with all dnazoo genomes + all mammals on ncbi (excluding those from the 200 mammals project)
+-> annotations to form tree can be found here: https://www.dnazoo.org/post/announcing-the-release-of-updated-genome-annotations
+https://github.com/macmanes-lab/dnazoo_annotation/blob/master/phylogeny_v2.newick
+
+Starting Point (for testing) - DNA Zoos 9 primates
+- Macaca fuscata
+- Allenopithecus nigroviridis
+- Mandrillus sphinx
+- Saimiri boliviensis
+- Cebuella pygmaea
+- Propithecus coquereli
+- Microcebus murinus
+- Eulemur flavifrons
+- Eulemur mongoz 
 
 PAWSEY notes
 -Zeus benefits over Nimbus due to higher RAM at expense of walltime
