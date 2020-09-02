@@ -49,11 +49,17 @@ https://www.dropbox.com/s/780pcbhrfllkbph/Eulemur_mongoz_HiC.fasta.gz?dl=0
 
 PAWSEY notes
 
--Zeus benefits over Nimbus due to higher RAM at expense of walltime
+-Zeus 96GB and 128GB nodes: https://pawsey.org.au/systems/zeus/
 
--Toil does not work with Slurm - limits to using 1 node on Zeus or Magnus (Toil is developed for cloud)
+-Magnus 64GB nodes: https://pawsey.org.au/systems/magnus/
 
--GPU acceleration has been introduced in most recent versions of cactus - there are GPUs on Topaz cluster - issue is on Topaz cannot reun CPU-only code 
+-Topaz 192 GB nodes: https://pawsey.org.au/systems/topaz/
+
+- Zeus benefits over Nimbus due to higher RAM at expense of walltime
+
+- Toil does not work with Slurm - limits to using 1 node on Zeus or Magnus (Toil is developed for cloud)
+
+- GPU acceleration has been introduced in most recent versions of cactus - there are GPUs on Topaz cluster - issue is on Topaz cannot reun CPU-only code 
 
 For monitoring jobs
 export SACCT_FORMAT=jobid%-20,jobname,partition,user,account,submit,start,end,elapsed,nnodes,ncpus,reqmem,maxrss,maxvmsize,state,exitcode,nodelist%10
