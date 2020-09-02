@@ -1,5 +1,6 @@
 # cactus-guide-2.0
-Up to date guide of running genome aligner CACTUS (last edit - 01/09/2020)
+Up to date guide of running genome aligner CACTUS -https://github.com/ComparativeGenomicsToolkit/cactus  
+(last edit - 01/09/2020)
 
 DNAZoo's goal is to create 1 alignment with all dnazoo genomes + all mammals on ncbi (excluding those from the 200 mammals project)
 -> annotations to form tree can be found here: https://www.dnazoo.org/post/announcing-the-release-of-updated-genome-annotations
@@ -37,13 +38,14 @@ sacct -a -u ashling_charles -S 2020-08-01
 
 
 Important notes:
-- typical size of genomes are 1-4GB 
-- on cluster set up, VMs do not talk to each other i.e. memory (RAM) and core requirements are specified per machine not per cluster
+-typical size of mammalian genomes are 1-4GB 
+-on cluster set up, VMs do not talk to each other i.e. memory (RAM) and core requirements are specified per machine not per cluster
 -cactus job is a workflow made up of several tasks - can break these downs
 -when downloading genomes from ncbi, need to remove spaces in the names of the chromosomes eg. 
 >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p13 Primary Assembly
 to
 >NC_000001.11
+-guide to AWS instructions for cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/doc/running-in-aws.md 
 
 
 Set-up (on pawsey) 
@@ -73,11 +75,31 @@ srun singularity exec cactus_v1.0.0.sif cactus jobStore evolverMammals.txt evolv
 when it runs out of walltime, can continue with command: 
  srun singularity exec cactus_v1.0.0.sif cactus jobStore evolverMammals.txt   evolverMammals.hal --root mr --binariesMode local --restart
 
-Test run (Mammalian pairwise alignment)
-testalignment.txt:
+Test run on PAWSEY's Zeus (Mammalian pairwise alignment)
+SeqFile - testalignment.txt:
 (human,greykangaroo);
 
 *human /group/pawsey0263/ashling_charles/human.fasta (size:3.1G)
 greykangaroo /group/pawsey0263/ashling_charles/mg-2k.fasta.masked (size:3.4G)
+
+Cactus script:
+#!/bin/bash -l
+#SBATCH --job-name="myjob"
+#SBATCH --nodes=1
+#SBATCH --account=pawsey0263
+#SBATCH --export=NONE
+#SBATCH --ntasks=1
+#SBATCH --cpus-per-task=28
+#SBATCH --output=cactusexample.%j.o
+#SBATCH --error=cactusexample.%j.e
+
+module load singularity
+CONTAINER_PATH=/scratch/pawsey0263/ashling_charles/test-cactus
+
+srun singularity exec cactus_v1.0.0.sif cactus jobStore /group/pawsey0263/ashling_charles/testalignment.txt humankangaroo.hal --binariesMode local --restart
+
+#TOIL_SLURM_ARGS="--nodes 8 --export=ALL" srun singularity exec cactus_v1.0.0.sif cactus --binariesMode local --batchSystem slurm --workDir=tmp --defaultCores 28 --maxCores 28 --maxNodes 8 --logLevel=debug --defaultDisk 96G --defaultMemory 96G jobStore evolverMammals.txt evolverMammals.hal --disableCaching --clean=always
+
+-> issue with script - always gets stuck in LastzRepeatMasking step
 
 
