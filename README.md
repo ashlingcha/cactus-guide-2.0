@@ -70,16 +70,16 @@ Important notes:
 -cactus job is a workflow made up of several tasks - can break these downs
 -when downloading genomes from ncbi, need to remove spaces in the names of the chromosomes eg. 
 
->NC_000001.11 Homo sapiens chromosome 1, GRCh38.p13 Primary Assembly
-to
->NC_000001.11
+ >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p13 Primary Assembly
+ to
+ >NC_000001.11
 
 -guide to AWS instructions for cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/doc/running-in-aws.md 
 
-    main points:
+   main points:
     
-    - mammal-size genomes require (N/2)x20 c4.8xlarge instances on the spot market,
-      (N/2) r3.8xlarge on-demand
+   - mammal-size genomes require (N/2)x20 c4.8xlarge instances on the spot market,
+     (N/2) r3.8xlarge on-demand
          ie. for pairwise alignment 20 c4.8xlarge instances, 1 r3.8xlarge instance
     
 
