@@ -17,6 +17,12 @@ Starting Point (for testing) - DNA Zoos 9 primates
 - Eulemur mongoz 
 (((((((((Macaca_fuscata:0.0037119499999999916,Allenopithecus_nigroviridis:0.0062513899999999956):0.002054940000000005,Mandrillus_sphinx:0.00705037):0.0152843,(Saimiri_boliviensis:0.01563329999999999,Cebuella_pygmaea:0.014609800000000006):0.01602400000000001):0.024321499999999996,(Propithecus_coquereli:0.019122499999999987,(Microcebus_murinus:0.022461900000000007,(Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008):0.01338700000000001):0.0021540499999999907):0.0241701):0.006678949999999989):0.007462670000000005):0.008728700000000006):0.005779100000000009):0.10036899999999999);
 
+Pairwise alignment start: 
+(Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008)
+Eulemur flavifrons (2.1G): https://www.dropbox.com/s/snr3ua4qnxin6sv/Eflavifronsk33QCA_HiC.fasta.gz?dl=0
+Eulemur mongoz (2.5G):
+https://www.dropbox.com/s/780pcbhrfllkbph/Eulemur_mongoz_HiC.fasta.gz?dl=0
+
 
 PAWSEY notes
 -Zeus benefits over Nimbus due to higher RAM at expense of walltime
@@ -30,7 +36,6 @@ sacct -a -u ashling_charles -S 2020-08-01
 
 Important notes:
 - typical size of genomes are 1-4GB 
-- 
 - on cluster set up, VMs do not talk to each other i.e. memory (RAM) and core requirements are specified per machine not per cluster
 -cactus job is a workflow made up of several tasks - can break these downs
 -when downloading genomes from ncbi, need to remove spaces in the names of the chromosomes eg. 
