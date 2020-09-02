@@ -121,6 +121,7 @@ SeqFile - testalignment.txt:
 (human,greykangaroo);
 
 *human /group/pawsey0263/ashling_charles/human.fasta (size:3.1G)
+
 greykangaroo /group/pawsey0263/ashling_charles/mg-2k.fasta.masked (size:3.4G)
 
 Cactus script:
