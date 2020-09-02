@@ -7,15 +7,25 @@ DNAZoo's goal is to create 1 alignment with all dnazoo genomes + all mammals on 
 https://github.com/macmanes-lab/dnazoo_annotation/blob/master/phylogeny_v2.newick
 
 Starting Point (for testing) - DNA Zoos 9 primates
+
 - Macaca fuscata
+
 - Allenopithecus nigroviridis
+
 - Mandrillus sphinx
+
 - Saimiri boliviensis
+
 - Cebuella pygmaea
+
 - Propithecus coquereli
+
 - Microcebus murinus
+
 - Eulemur flavifrons
+
 - Eulemur mongoz 
+
 (((((((((Macaca_fuscata:0.0037119499999999916,Allenopithecus_nigroviridis:0.0062513899999999956):0.002054940000000005,Mandrillus_sphinx:0.00705037):0.0152843,(Saimiri_boliviensis:0.01563329999999999,Cebuella_pygmaea:0.014609800000000006):0.01602400000000001):0.024321499999999996,(Propithecus_coquereli:0.019122499999999987,(Microcebus_murinus:0.022461900000000007,(Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008):0.01338700000000001):0.0021540499999999907):0.0241701):0.006678949999999989):0.007462670000000005):0.008728700000000006):0.005779100000000009):0.10036899999999999);
 
 review tree here:http://etetoolkit.org/treeview/
