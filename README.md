@@ -31,16 +31,24 @@ Starting Point (for testing) - DNA Zoos 9 primates
 review tree here:http://etetoolkit.org/treeview/
 
 Pairwise alignment start: 
+
 (Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008);
-Eulemur flavifrons (2.1G): https://www.dropbox.com/s/snr3ua4qnxin6sv/Eflavifronsk33QCA_HiC.fasta.gz?dl=0
+
+Eulemur flavifrons (2.1G): 
+https://www.dropbox.com/s/snr3ua4qnxin6sv/Eflavifronsk33QCA_HiC.fasta.gz?dl=0
+
 Eulemur mongoz (2.5G):
 https://www.dropbox.com/s/780pcbhrfllkbph/Eulemur_mongoz_HiC.fasta.gz?dl=0
 
 
 PAWSEY notes
+
 -Zeus benefits over Nimbus due to higher RAM at expense of walltime
+
 -Toil does not work with Slurm - limits to using 1 node on Zeus or Magnus (Toil is developed for cloud)
+
 -GPU acceleration has been introduced in most recent versions of cactus - there are GPUs on Topaz cluster - issue is on Topaz cannot reun CPU-only code 
+
 For monitoring jobs
 export SACCT_FORMAT=jobid%-20,jobname,partition,user,account,submit,start,end,elapsed,nnodes,ncpus,reqmem,maxrss,maxvmsize,state,exitcode,nodelist%10
 sacct -a -u ashling_charles -S 2020-08-01
@@ -48,15 +56,22 @@ sacct -a -u ashling_charles -S 2020-08-01
 
 
 Important notes:
+
 -typical size of mammalian genomes are 2-4GB 
+
 -on cluster set up, VMs do not talk to each other i.e. memory (RAM) and core requirements are specified per machine not per cluster
+
 -cactus job is a workflow made up of several tasks - can break these downs
 -when downloading genomes from ncbi, need to remove spaces in the names of the chromosomes eg. 
+
 >NC_000001.11 Homo sapiens chromosome 1, GRCh38.p13 Primary Assembly
 to
 >NC_000001.11
+
 -guide to AWS instructions for cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/doc/running-in-aws.md 
+
     main points:
+    
     - mammal-size genomes require (N/2)x20 c4.8xlarge instances on the spot market,
       (N/2) r3.8xlarge on-demand
          ie. for pairwise alignment 20 c4.8xlarge instances, 1 r3.8xlarge instance
@@ -97,6 +112,7 @@ SeqFile - testalignment.txt:
 greykangaroo /group/pawsey0263/ashling_charles/mg-2k.fasta.masked (size:3.4G)
 
 Cactus script:
+
 #!/bin/bash -l
 #SBATCH --job-name="myjob"
 #SBATCH --nodes=1
