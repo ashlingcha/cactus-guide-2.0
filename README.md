@@ -21,7 +21,7 @@ Starting Point (for testing) - DNA Zoos 9 primates
 review tree here:http://etetoolkit.org/treeview/
 
 Pairwise alignment start: 
-(Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008)
+(Eulemur_flavifrons:0.0037270299999999923,Eulemur_mongoz:0.004299560000000008);
 Eulemur flavifrons (2.1G): https://www.dropbox.com/s/snr3ua4qnxin6sv/Eflavifronsk33QCA_HiC.fasta.gz?dl=0
 Eulemur mongoz (2.5G):
 https://www.dropbox.com/s/780pcbhrfllkbph/Eulemur_mongoz_HiC.fasta.gz?dl=0
@@ -38,7 +38,7 @@ sacct -a -u ashling_charles -S 2020-08-01
 
 
 Important notes:
--typical size of mammalian genomes are 1-4GB 
+-typical size of mammalian genomes are 2-4GB 
 -on cluster set up, VMs do not talk to each other i.e. memory (RAM) and core requirements are specified per machine not per cluster
 -cactus job is a workflow made up of several tasks - can break these downs
 -when downloading genomes from ncbi, need to remove spaces in the names of the chromosomes eg. 
@@ -46,7 +46,11 @@ Important notes:
 to
 >NC_000001.11
 -guide to AWS instructions for cactus: https://github.com/ComparativeGenomicsToolkit/cactus/blob/master/doc/running-in-aws.md 
-
+    main points:
+    - mammal-size genomes require (N/2)x20 c4.8xlarge instances on the spot market,
+      (N/2) r3.8xlarge on-demand
+         ie. for pairwise alignment 20 c4.8xlarge instances, 1 r3.8xlarge instance
+    
 
 Set-up (on pawsey) 
 dir="$MYSCRATCH/test-cactus"
